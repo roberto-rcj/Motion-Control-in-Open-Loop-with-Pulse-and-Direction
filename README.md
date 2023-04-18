@@ -22,7 +22,7 @@ The hardware is made by:
 ## MOTION EQUATION
 there are some formulas to calculate the motor motion. let´s take a look:
 
-### Pulses generator formula
+### *Pulses generator formula*
  The total of pulses generated to rotate some turns the stepper motor can be calculated by:
  
 ### Nº pulses = microsteps x stepper resolution x Nº turns
