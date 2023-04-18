@@ -50,5 +50,13 @@ Distance = 20 x 5 = 100mm moved by the motor.
 
 but if we join the equations I and II, we can manage the variables to hide the number of turns, and let explicit the relation between distance and pulses. look:
 
-### Nº pulses = (microsteps x stepper resolution x Distance) / K
+### Nº pulses = (microsteps x stepper resolution x Distance) / K (III)
+
+### *speed and aceleration formula*
+
+in a real application, normally we request from the user, the distance that will be moved, the motor top speed and acceleration. For this example we will deal with a constant acceleration ratio.
+
+if we divide the distance to the time, we have the speed, so, doing this to the equation III
+
+### speed = Nº pulses / time = (microsteps x stepper resolution x Distance) / (K * time)(III)
 
