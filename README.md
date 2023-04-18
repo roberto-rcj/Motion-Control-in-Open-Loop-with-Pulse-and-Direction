@@ -25,9 +25,13 @@ there are some formulas to calculate the motor motion. let´s take a look:
 ### Pulses generator formula
  The total of pulses generated to rotate some turns the stepper motor can be calculated by:
  
-# Nº pulses = microsteps x stepper resolution x Nº turns
+### Nº pulses = microsteps x stepper resolution x Nº turns
 where:
  Nº pulses = total number of pulses necessary to turn the motor to the desired position
  microsteps = stepping reduction ration to smooth the movements;
  stepper resolution = number of pulses to turn once the stepper motor
  Nº turns = number of desired turns
+ 
+ example: for this project, microsteps = 4, stepper resolution = 200, number of turns = 20
+ so, the total pulses that can need to be genereted are: 
+ Nº pulses = 4 x 200 x 20 = 16000 pulses
