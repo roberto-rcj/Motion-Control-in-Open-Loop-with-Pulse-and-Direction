@@ -25,7 +25,7 @@ there are some formulas to calculate the motor motion. let´s take a look:
 ### *Pulses generator formula*
  The total of pulses generated to rotate some turns the stepper motor can be calculated by:
  
-### Nº pulses = microsteps x stepper resolution x Nº turns
+### Nº pulses = microsteps x stepper resolution x Nº turns (I)
 where:
  Nº pulses = total number of pulses necessary to turn the motor to the desired position
  microsteps = stepping reduction ration to smooth the movements;
@@ -35,3 +35,20 @@ where:
  example: for this project, microsteps = 4, stepper resolution = 200, number of turns = 20
  so, the total pulses that can need to be genereted are: 
  Nº pulses = 4 x 200 x 20 = 16000 pulses
+ 
+ ### *distance moved formula*
+ Using some mechanical system (pulley, rack and pinion, ball screw, etc...) we can convert rotary moving to linear moving. By this manner, each mechanisc has a conversion formula, but we can skip this part and understand that the important information is the number that correlates this transformation. This number is the *relation constant* and needs be from turns to linear unit, as milimeters, for example. In this project we will convert turns to milimeters. let´s take a look at the formula:
+ 
+ ### Distance = Nº turns x K (II)
+  where:
+   Distance = distance in millimeters moved;
+   Nº turns = number of turns desired to the motor;
+   K = convertion constant that converts pulses in millimeters.
+   
+example: imagine a system of ball screw coupled in the motor that has a relation of 5mm/turn, so with 20 turns we will have:
+Distance = 20 x 5 = 100mm moved by the motor.
+
+but if we join the equations I and II, we can manage the variables to hide the number of turns, and let explicit the relation between distance and pulses. look:
+
+### Nº pulses = (microsteps x stepper resolution x Distance) / K
+
